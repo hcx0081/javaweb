@@ -22,10 +22,10 @@
             ]
         }
         var jsonObjStr = JSON.stringify(jsonObj)
-        alert(jsonObjStr)//转换为字符串，类似于Java中的toString()方法
-
-        var jsonObjObj =JSON.parse(jsonObjStr)
-        alert(jsonObjObj)//转换为对象
+        console.log(jsonObjStr)//转换为字符串，类似于Java中的toString()方法
+        
+        var jsonObjObj = JSON.parse(jsonObjStr)
+        console.log(jsonObjObj)//转换为对象
     </script>
 </head>
 <body>
