@@ -12,7 +12,7 @@ import java.io.IOException;
 public class Servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //使用 forward() 方法访问目标资源
+        //使用forward()方法访问目标资源
         request.getRequestDispatcher("/admin/a.html").forward(request,response);
     }
 

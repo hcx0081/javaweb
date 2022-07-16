@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     
-    <!--filter 标签用于注册配置一个 Filter 过滤器-->
+    <!--filter标签用于注册配置一个Filter过滤器-->
     <filter>
-        <!--设置 Filter 名称-->
+        <!--设置Filter名称-->
         <filter-name>MyFilter</filter-name>
-        <!--设置 Filter 全类名（完整名称）-->
+        <!--设置Filter全类名（完整名称）-->
         <filter-class>com.javaweb.filter.MyFilter</filter-class>
 
         <init-param>
@@ -22,9 +22,9 @@
 
     </filter>
     
-    <!--filter-mapping 标签用于配置 Filter 过滤器的拦截路径（资源）-->
+    <!--<filter-mapping>用于配置Filter过滤器的拦截路径（资源）-->
     <filter-mapping>
-        <!--filter-name 标签表示当前的拦截路径给哪个 Filter 过滤器使用（匹配上面的<filter-name>）-->
+        <!--<filter-name>表示当前的拦截路径给哪个Filter过滤器使用（匹配上面的<filter-name>）-->
         <filter-name>MyFilter</filter-name>
 
         <!--
@@ -34,14 +34,15 @@
          -->
         <!--在一个过滤器下可以配置多个拦截路径-->
         <url-pattern>/admin/*</url-pattern>
-        <url-pattern>/Servlet</url-pattern><!--对该 servlet 进行拦截-->
+        <url-pattern>/Servlet</url-pattern><!--对该servlet进行拦截-->
         <dispatcher>REQUEST</dispatcher><!--默认拦截的请求-->
-        <dispatcher>FORWARD</dispatcher><!--拦截通过 RequestDispatcher 的 forward() 方法访问目标资源的请求-->
+        <dispatcher>FORWARD</dispatcher><!--拦截通过RequestDispatcher的forward()方法访问目标资源的请求-->
     </filter-mapping>
 
 
+    
 
-    <!--Filter 链中各个 Filter 的拦截顺序和它们在 web.xml 文件中 <filter-mapping> 的从上到下的映射顺序一致-->
+    <!--Filter链中各个Filter的拦截顺序和它们在web.xml文件中<filter-mapping>的从上到下的映射顺序一致-->
     <filter>
         <filter-name>MyFilterChain1</filter-name>
         <filter-class>com.javaweb.filter.MyFilterChain1</filter-class>
