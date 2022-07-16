@@ -2,6 +2,7 @@ package com.javaweb.filter;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
@@ -45,9 +46,10 @@ public class MyFilter implements Filter{
 
         Object user = session.getAttribute("user");
         if (user == null) {
-            //此时请求转发的是绝对路径；如果是相对路径，它则是去找 /admin/ 目录下的 login.jsp
-            servletRequest.getRequestDispatcher("/login.jsp").forward(servletRequest, servletResponse);
-            //((HttpServletResponse) servletResponse).sendRedirect("/login.jsp");
+            servletRequest.getRequestDispatcher("login.jsp").forward(servletRequest, servletResponse);
+            //有配置工程路径的情况下，这里为相对路径才访问的到，因为这里如果加上 /，那么就是被浏览器解析，没有加上工程路径
+            //没有配置工程路径的情况下，这里的相对路径和绝对路径都可以访问的到
+            //((HttpServletResponse) servletResponse).sendRedirect("login.jsp");
         } else {
             //让程序继续往下访问，放行（很重要）
             filterChain.doFilter(servletRequest, servletResponse);

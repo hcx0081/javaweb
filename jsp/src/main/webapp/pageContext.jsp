@@ -16,6 +16,6 @@
 4.获取工程路径:${pageContext.request.contextPath}<br>
 5.获取请求方法:${pageContext.request.method}<br>
 6.获取客户端ip地址:${pageContext.request.remoteHost}<br>
-6.获取会话ip编号:${pageContext.session.id}<br>
+7.获取会话ip编号:${pageContext.session.id}<br>
 </body>
 </html>
