@@ -35,14 +35,13 @@ public class RegisterServlet extends HttpServlet {
             System.out.println("请不要重复提交表单");
         }
 
-/*        try {
+        /*try {
             Thread.sleep(5000);//问题二、网络延迟等原因，用户以为提交失败，就会多点了几次提交操作，也会造成表单重复提交
         } catch (InterruptedException e) {
             e.printStackTrace();
         }*/
 
-//        request.getRequestDispatcher("success.jsp").forward(request,response);//问题一、按下刷新键会导致表单重复提交
-
+        //request.getRequestDispatcher("success.jsp").forward(request,response);//问题一、按下刷新键会导致表单重复提交
     }
 
     @Override
