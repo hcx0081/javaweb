@@ -4,13 +4,13 @@
     <title></title>
     <%--org.webjars.bower--%>
     <script src="webjars/jquery/3.6.0/dist/jquery.min.js"></script>
-
+    
     <%--    &lt;%&ndash;org.webjars&ndash;%&gt;--%>
     <%--    <script src="webjars/jquery/3.6.0/jquery.min.js"></script>--%>
-
+    
     <script type="text/javascript">
         $(function () {
-
+                
                 $("#ajaxBtn").click(function () {
                     $.ajax({
                         url: "AjaxJqueryServlet",
@@ -23,37 +23,37 @@
                         dataType: "json",
                     })
                 })
-
-
+                
+                
                 $("#getBtn").click(function () {
                     $.get("GetJqueryServlet", function (data) {
                         $("#main").html("$.get() —— 编号：" + data.id + "，姓名：" + data.name)
                     }, "json")
                 })
-
-
+                
+                
                 $("#postBtn").click(function () {
                     //PostJqueryServlet中需要调用doPost()方法处理数据
                     $.post("PostJqueryServlet", function (data) {
                         $("#main").html("$.post() —— 编号：" + data.id + "，姓名：" + data.name)
                     }, "json")
                 })
-
-
+                
+                
                 $("#getJsonBtn").click(function () {
                     $.getJSON("GetJsonJqueryServlet", function (data) {
                         $("#main").html("$.getJSON() —— 编号：" + data.id + "，姓名：" + data.name)
                     })
                 })
-
-
+                
+                
                 $("#serializeBtn").click(function () {
                     $.getJSON("SerializeJqueryServlet", $("#form").serialize(), function (data) {
                         $("#main").html("serialize() —— 编号：" + data.id + "，姓名：" + data.name)
                     })
                 })
-
-
+                
+                
             }
         )
     </script>
