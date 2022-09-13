@@ -22,7 +22,7 @@ public class PostJqueryServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         System.out.println("PostJqueryServlet");
-        Person person = new Person(1, "hcx");
+        Person person = new Person(1, "zs");
         Gson gson = new Gson();
         //将person对象转换为json字符串
         String jsonString = gson.toJson(person);
