@@ -16,7 +16,7 @@
             /*xhr.open("POST","AjaxXhrServlet");
             xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 
-            xhr.send("id=1&name=hcx");*/
+            xhr.send("id=1&name=zs");*/
 
             
             //4、在seng()方法前绑定onreadystatechange事件，处理请求完成后的操作
