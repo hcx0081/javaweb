@@ -22,6 +22,7 @@
             //4、在seng()方法前绑定onreadystatechange事件，处理请求完成后的操作
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.ontimeout)
                     //解析json字符串为json对象
                     var jsonObj = JSON.parse(xhr.responseText);
                     //把响应的数据显示在页面上
