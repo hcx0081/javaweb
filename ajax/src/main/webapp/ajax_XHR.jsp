@@ -12,11 +12,11 @@
             xhr.open("GET", "AjaxXhrServlet");
             //3、调用send()方法发送参数
             xhr.send();
-                //如果是POST，想带参数则需要使用setRequestHeader()来添加HTTP请求头，然后在send()方法中规定发送的数据
-            /*xhr.open("POST","AjaxXhrServlet");
-            xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                //如果是POST，想带参数则可以在send()方法中规定发送的数据
+            /* xhr.open("POST", "AjaxXhrServlet");
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");//设置该请求头可以像HTML表单那样POST数据
 
-            xhr.send("id=1&name=zs");*/
+            xhr.send("id=1&name=zs"); */
 
             
             //4、在seng()方法前绑定onreadystatechange事件，处理请求完成后的操作
