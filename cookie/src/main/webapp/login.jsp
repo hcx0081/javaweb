@@ -4,7 +4,7 @@
     <title></title>
 </head>
 <body>
-<form action="LoginServlet" method="get">
+<form action="LoginServlet" method="post">
     用户名：<input type="text" name="username" value="${cookie.username.value}">
     <br>
     密码：<input type="text" name="psd">
