@@ -15,7 +15,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");
+        // request.setCharacterEncoding("utf-8");
         String username = request.getParameter("username");
         String psd = request.getParameter("psd");
         System.out.println(username);

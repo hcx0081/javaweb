@@ -5,5 +5,8 @@
     <title></title>
 </head>
 <body>
+    <form action="HelloServlet" method="post">
+        <button type="submit">提交</button>
+    </form>
 </body>
 </html>

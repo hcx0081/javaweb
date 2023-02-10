@@ -15,16 +15,26 @@ import java.io.IOException;
 public class SCServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 获取web.xml中配置的全局（整个web工程）上下文参数<context-param>
         ServletContext servletContext = getServletContext();
+        
+        // 获取web.xml中配置的全局上下文初始化参数（属于整个Web项目）
         System.out.println("参数名1 的参数值为：" + servletContext.getInitParameter("参数名1"));// 参数值1
         System.out.println("参数名2 的参数值为：" + servletContext.getInitParameter("参数名2"));// 参数值2
         
-        // 可以获取当前工程路径(名字)，格式：/工程路径(名字)（前面的ip、端口号和后面的资源路径则忽略）
-        System.out.println("当前工程路径：" + servletContext.getContextPath());
+        // 获取当前项目的项目路径，格式：/项目路径
+        System.out.println("项目路径：" + servletContext.getContextPath());
         
-        // 获取工程后在服务器磁盘上的绝对路径
-        System.out.println("工程部署的路径：" + servletContext.getRealPath("/"));
+        // 获取当前项目在服务器磁盘上的绝对路径
+        System.out.println("项目的绝对路径：" + servletContext.getRealPath(""));// D:\IDEA\Workspace\javaweb\servlet\src\main\webapp
+        System.out.println("项目的绝对路径：" + servletContext.getRealPath("/"));// D:\IDEA\Workspace\javaweb\servlet\src\main\webapp\
+        System.out.println("项目的绝对路径：" + servletContext.getRealPath("index.jsp"));// D:\IDEA\Workspace\javaweb\servlet\src\main\webapp\index.jsp
+        System.out.println("项目的绝对路径：" + servletContext.getRealPath("/index.jsp"));// D:\IDEA\Workspace\javaweb\servlet\src\main\webapp\index.jsp
+        
+        
+        System.out.println(servletContext.getResourcePaths("/WEB-INF/"));// [/WEB-INF/web.xml]
+        
+        System.out.println(servletContext.getResource("index.jsp"));// jndi:/localhost/javaWeb/index.jsp
+        System.out.println(servletContext.getResource("index.jsp1"));// null
         
         // 像Map一样存取数据
         servletContext.setAttribute("k", "v");

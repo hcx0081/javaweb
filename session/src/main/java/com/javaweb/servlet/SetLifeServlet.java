@@ -3,29 +3,25 @@ package com.javaweb.servlet;
  * @description: ${description}
  */
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "SetLifeServlet", value = "/SetLifeServlet")
 public class SetLifeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //处理请求响应中文乱码问题
-        response.setContentType("text/html;charset=utf-8");
-
         HttpSession session = request.getSession();
-        //设置Session的超时间隔
+        // 设置Session的超时间隔
         session.setMaxInactiveInterval(3);
-
-        //获取Session超时时长
+        // 获取Session的超时间隔
         int inactiveInterval = session.getMaxInactiveInterval();
-        response.getWriter().write("Session的超时时长为："+inactiveInterval+"秒");//3，即3秒钟
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        
+        System.out.println("Session的超时间隔：" + session.getId());
+        System.out.println("Session的超时间隔：" + inactiveInterval + "秒");// 3，即3秒
     }
 }
