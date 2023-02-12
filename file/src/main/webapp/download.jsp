@@ -4,6 +4,6 @@
     <title>Title</title>
 </head>
 <body>
-  <a href="DownloadServlet?name=斯科菲尔德.jpg">下载图片</a>
+    <a href="DownloadServlet?name=斯科菲尔德.jpg">下载图片</a>
 </body>
 </html>

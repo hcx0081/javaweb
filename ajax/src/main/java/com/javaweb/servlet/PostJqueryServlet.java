@@ -24,7 +24,7 @@ public class PostJqueryServlet extends HttpServlet {
         System.out.println("PostJqueryServlet");
         Person person = new Person(1, "zs");
         Gson gson = new Gson();
-        //将person对象转换为json字符串
+        // 将person对象转换为json字符串
         String jsonString = gson.toJson(person);
         
         response.getWriter().write(jsonString);

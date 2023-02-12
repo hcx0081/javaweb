@@ -8,17 +8,17 @@
             var xhr = new XMLHttpRequest();
 
             //2、调用open()方法设置请求参数
-                //如果是GET，想带参数则可以直接url后面加上"?xxx=xxx"
+            //如果是GET，想带参数则可以直接url后面加上"?xxx=xxx"
             xhr.open("GET", "AjaxXhrServlet");
             //3、调用send()方法发送参数
             xhr.send();
-                //如果是POST，想带参数则可以在send()方法中规定发送的数据
+            //如果是POST，想带参数则可以在send()方法中规定发送的数据
             /* xhr.open("POST", "AjaxXhrServlet");
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");//设置该请求头可以像HTML表单那样POST数据
 
             xhr.send("id=1&name=zs"); */
 
-            
+
             //4、在seng()方法前绑定onreadystatechange事件，处理请求完成后的操作
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
@@ -32,7 +32,7 @@
     </script>
 </head>
 <body>
-<button onclick="ajaxRequest()">ajax request</button>
-<div id="main"></div>
+    <button onclick="ajaxRequest()">ajax request</button>
+    <div id="main"></div>
 </body>
 </html>

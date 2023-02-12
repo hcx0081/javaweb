@@ -4,9 +4,9 @@
     <title></title>
 </head>
 <body>
-<%
-    System.out.println("filter.jsp 执行");
-%>
-这是 filter.jsp 页面
+    <%
+        System.out.println("filter.jsp执行");
+    %>
+    这是filter.jsp页面
 </body>
 </html>

@@ -4,6 +4,6 @@
 <head>
 </head>
 <body>
-<a href="Servlet">发送请求</a>
+    <a href="Servlet">发送请求</a>
 </body>
 </html>

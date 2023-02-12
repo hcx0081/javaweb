@@ -2,7 +2,7 @@
 <html>
 <head>
     <title></title>
-    
+
 </head>
 <body>
     <form action="o.jsp" method="get">

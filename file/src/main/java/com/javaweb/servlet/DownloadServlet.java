@@ -17,48 +17,36 @@ import java.net.URLEncoder;
 public class DownloadServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-        //1. 获取要下载的文件名
+        // 1.获取需要下载的文件名称
         String downloadFilename = request.getParameter("name");
-
-
-        //2. 读取要下载的文件内容（通过ServletContext对象可以读取）
+        
+        // 2.读取需要下载的文件内容（通过ServletContext对象读取）
         ServletContext servletContext = getServletContext();
-
-        //3. 通过响应头告诉客户端返回的数据类型
-            //获取指定目录下的指定文件名的文件类型
-        String mimeType = servletContext.getMimeType("file/" + downloadFilename);
-        System.out.println("下载的文件类型：" + mimeType);
-            //设置下载的文件类型
-        response.setContentType(mimeType);
-
-
-        //4. 还要告诉客户端收到的数据是用于下载使用，依旧是使用响应头
-            //通知浏览器以下载的方式（附件）打开
-            // Content-Disposition 响应头，表示收到的数据怎么处理
-            // attachment 表示附件的意思，表示下载使用
-            /* filename 表示指定下载的文件名（无需添加后缀），
-               添加后缀的话浏览器会将最后一个小数点的后缀删除，
-               例如 filename=1.jpg.png ，浏览器就会提示下载 1.jpg.jpg 文件
-               若有中文，则显示不出来
-               使用 URLEncoder.encode("文件名","UTF-8") 将下载的文件名改成 UTF-8 形式
-            */
-        response.setHeader("Content-Disposition", "attachment;filename="+ URLEncoder.encode(downloadFilename,"UTF-8"));
-
-
-        //5. 将下载的文件内容回传给客户端
+        // 获取需要下载的文件的输入流
         InputStream resourceAsStream = servletContext.getResourceAsStream("file/" + downloadFilename);
-            //获取输出流
+        
+        // 3.通过响应头通知客户端响应数据的MIME类型
+        // 获取指定目录下的指定文件的MIME类型
+        String mimeType = servletContext.getMimeType("file/" + downloadFilename);
+        System.out.println("下载的文件的类型：" + mimeType);
+        // 设置响应体的MIME类型
+        response.setContentType(mimeType);
+        
+        // 4.通过响应头通知客户端响应数据是用于下载
+        // 通知浏览器以附件的形式下载保存
+        /*
+         * Content-Disposition头字段：服务端响应数据的响应形式
+         *      attachment：以附件的形式响应，表示客户端需要下载
+         *      filename：指定下载的文件名称（无需添加后缀），如果添加后缀浏览器会将最后一个小点的后缀删除
+         *      例如：filename=1.jpg.png，浏览器就会提示下载1.jpg.jpg文件
+         *      若有中文，则无法显示，可以使用URLEncoder.encode("文件名", "UTF-8")将下载的文件名称的字符集编码修改为UTF-8
+         *  */
+        response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(downloadFilename, "UTF-8"));
+        
+        // 5.通过响应体将需要下载的文件内容输出给客户端
+        // 获取响应输出流
         OutputStream outputStream = response.getOutputStream();
-            //把输入流里面的数据读取复制给输出流，输出给客户端
+        // 将输入流中的数据读取复制到输出流中
         IOUtils.copy(resourceAsStream, outputStream);
-
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

@@ -20,9 +20,9 @@ import java.sql.SQLException;
 public class PageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        
         BookService bookService = new BookServiceImpl();
-
+        
         Integer pageNo = Integer.valueOf(request.getParameter("pageNo"));
         Page<Book_Info> page = null;
         try {
@@ -33,10 +33,10 @@ public class PageServlet extends HttpServlet {
         request.setAttribute("page", page);
         request.getRequestDispatcher("bookList.jsp").forward(request, response);
     }
-
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-
-
+    
+    
     }
 }

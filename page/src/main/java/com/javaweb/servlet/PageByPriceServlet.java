@@ -21,9 +21,9 @@ public class PageByPriceServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         BookService bookService = new BookServiceImpl();
-
+        
         Integer pageNo = Integer.valueOf(request.getParameter("pageNo"));
-
+        
         Integer min;
         Integer max;
 
@@ -42,41 +42,40 @@ public class PageByPriceServlet extends HttpServlet {
         }else {
             max = Integer.valueOf(request.getParameter("max"));
         }*/
-
-
-
+        
+        
         Page<Book_Info> page = null;
-
-        if (request.getParameter("min")==""||request.getParameter("max")==""){  //如果获取表单中的输入值为 空
+        
+        if (request.getParameter("min") == "" || request.getParameter("max") == "") {  // 如果获取表单中的输入值为 空
             try {
-                //直接查询所有信息并分页
+                // 直接查询所有信息并分页
                 page = bookService.page(pageNo);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        }else { //如果获取表单中的输入值是正常的
-                min= Integer.valueOf(request.getParameter("min"));
-                max= Integer.valueOf(request.getParameter("max"));
+        } else { // 如果获取表单中的输入值是正常的
+            min = Integer.valueOf(request.getParameter("min"));
+            max = Integer.valueOf(request.getParameter("max"));
             try {
-                page = bookService.pageByPrice(pageNo,min,max);
+                page = bookService.pageByPrice(pageNo, min, max);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-
-
-        if (page.getUrl()=="PageServlet?"){
+        
+        
+        if (page.getUrl() == "PageServlet?") {
             /*因为是 请求转发 ，所以可以共享 request 域中的数据*/
             request.getRequestDispatcher("PageServlet").forward(request, response);
-        }else {
+        } else {
             request.setAttribute("page", page);
             request.getRequestDispatcher("bookList.jsp").forward(request, response);
         }
     }
-
-
+    
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-
+    
     }
 }
