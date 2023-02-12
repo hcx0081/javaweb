@@ -15,34 +15,22 @@ import java.io.IOException;
 public class GetCookieServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /* 处理响应中文乱码问题 */
-        response.setContentType("text/html;charset=utf-8");
-        
+        // 获取当前请求携带的所有Cookie
         Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            //getName() 用于返回 Cookie 的名称
-            //getValue() 用于返回 Cookie 的值
-            response.getWriter().write("Cookie[" + cookie.getName() + "=" + cookie.getValue() + "]<br>");
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                System.out.println("Cookie：" + cookie.getName() + "=" + cookie.getValue());
+            }
         }
-        
-        
-        //查找想要的 Cookie
-        Cookie wantCookie = null;
+        // 查找指定Cookie
+        Cookie wantCookie;
         for (Cookie cookie : cookies) {
             if ("k".equals(cookie.getName())) {
                 wantCookie = cookie;
+                System.out.println("wantCookie=" + wantCookie);
+                System.out.println("Cookie：" + wantCookie.getName() + "=" + wantCookie.getValue());
                 break;
             }
         }
-        //如果 wantCookie 不等于 null，也就是找到了需要的 Cookie
-        if (wantCookie != null) {
-            response.getWriter().write("<br>wantCookie=" + wantCookie + "<br>");
-            response.getWriter().write("也就是Cookie[" + wantCookie.getName() + "=" + wantCookie.getValue() + "]");
-        }
-    }
-    
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    
     }
 }
