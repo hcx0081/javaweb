@@ -1,7 +1,7 @@
 package com.javaweb.threadlocal;
 
 /**
- * @Description:
+ * {@code @Description:}
  */
 public class OrderDao {
     public void createOrder() {

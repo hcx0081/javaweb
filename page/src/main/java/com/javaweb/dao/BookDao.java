@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * @description:
+ * {@code @Description:}
  */
 public interface BookDao {
     

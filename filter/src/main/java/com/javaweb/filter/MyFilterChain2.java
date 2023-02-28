@@ -4,7 +4,7 @@ import javax.servlet.*;
 import java.io.IOException;
 
 /**
- * @description: 过滤器链2
+ * {@code @Description:} 过滤器链2
  */
 public class MyFilterChain2 implements Filter {
     @Override

@@ -1,7 +1,7 @@
 package com.javaweb.pojo;
 
 /**
- * @description: 书本表
+ * {@code @Description:} 书本表
  */
 public class Book_Info {
     // 书本编号

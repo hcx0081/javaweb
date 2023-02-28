@@ -1,6 +1,6 @@
 package com.javaweb.servlet;
 /**
- * @description: ${description}
+ * {@code @Description:} ${description}
  */
 
 import com.google.code.kaptcha.Constants;

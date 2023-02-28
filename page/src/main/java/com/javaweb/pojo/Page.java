@@ -3,7 +3,7 @@ package com.javaweb.pojo;
 import java.util.List;
 
 /**
- * @description: 分页实体类
+ * {@code @Description:} 分页实体类
  */
 
 /**

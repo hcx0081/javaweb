@@ -38,7 +38,7 @@
         </dependency>
         
         
-        <!-- jstl依-->
+        <!-- jstl-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>

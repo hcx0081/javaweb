@@ -4,7 +4,7 @@ import com.javaweb.dao.impl.BookDaoImpl;
 import java.sql.SQLException;
 
 /**
- * @description: 测试类
+ * {@code @Description:} 测试类
  */
 public class BookInfoTest {
     

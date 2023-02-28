@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * @description:
+ * {@code @Description:}
  */
 public class ThreadLocalTest {
     
