@@ -14,7 +14,6 @@ import java.util.List;
  * {@code @Description:}
  */
 public class BookDaoImpl implements BookDao {
-    
     /**
      * 查询总记录数
      *

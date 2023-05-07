@@ -9,7 +9,6 @@ import java.util.List;
  * {@code @Description:}
  */
 public interface BookDao {
-    
     /**
      * 查询总记录数
      *

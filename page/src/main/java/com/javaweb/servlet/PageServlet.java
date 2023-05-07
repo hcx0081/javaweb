@@ -33,10 +33,4 @@ public class PageServlet extends HttpServlet {
         request.setAttribute("page", page);
         request.getRequestDispatcher("bookList.jsp").forward(request, response);
     }
-    
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-    
-    
-    }
 }

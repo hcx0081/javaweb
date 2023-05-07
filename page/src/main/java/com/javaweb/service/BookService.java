@@ -9,7 +9,6 @@ import java.sql.SQLException;
  * {@code @Description:}
  */
 public interface BookService {
-    
     /**
      * 处理分页功能
      *

@@ -20,7 +20,6 @@
             </tr>
             </thead>
 
-
             <tbody>
 
             <c:forEach items="${page.items}" var="it">
@@ -36,17 +35,16 @@
         </table>
 
 
-        <%--静态包含，分页条--%>
+        <%-- 静态包含，分页条 --%>
         <%@include file="page_nav.jsp" %>
 
-
         <form class="form-inline justify-content-center mb-2" id="form" action="PageByPriceServlet">
-            <input type="hidden" name="pageNo" value="1"><%--注意此处--%>
+            <input type="hidden" name="pageNo" value="1"><%-- 注意此处 --%>
             <label class="">价格：</label>
-            <%--保留参数中的 min--%>
+            <%-- 保留参数中的min --%>
             <input class="col-1 form-control form-control-sm" type="text" id="min" name="min" value="${param.min}">&nbsp;元
             &nbsp;—&nbsp;
-            <%--保留参数中的 max--%>
+            <%-- 保留参数中的max --%>
             <input class="col-1 form-control form-control-sm" type="text" id="max" name="max" value="${param.max}">&nbsp;元
             <button class="btn btn-outline-secondary ml-2 btn-s" type="submit" id="search">查询</button>
             <script>
@@ -55,27 +53,23 @@
                     var min = $("#min").val()
                     var max = $("#max").val()
 
-                    /* //如果输入的值为 空 ，即什么也没输入，或输入的值 有空格
-                     if ((min==""||max=="")||((min.indexOf(" ")>=0)||max.indexOf(" ")>=0)){
-                         alert("不能为空！")
-                         //表单不提交
-                         return false
-                     }*/
-
-
-                    //如果输入的值 有空格 ，为 空 交给后端处理
-                    if (((min.indexOf(" ") >= 0) || max.indexOf(" ") >= 0)) {
+                    // 如果输入的值为 空 ，即什么也没输入，或输入的值 有空格
+                    if ((min == "" || max == "") || ((min.indexOf(" ") >= 0) || max.indexOf(" ") >= 0)) {
                         alert("不能为空！")
-                        //表单不提交
+                        // 表单不提交
                         return false
                     }
 
-                })
 
+                    // 如果输入的值 有空格 ，为 空 交给后端处理
+                    if (((min.indexOf(" ") >= 0) || max.indexOf(" ") >= 0)) {
+                        alert("不能为空！")
+                        // 表单不提交
+                        return false
+                    }
+                })
             </script>
         </form>
-
-
     </div>
 </body>
 </html>

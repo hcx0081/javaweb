@@ -74,43 +74,44 @@ public class BookServiceImpl implements BookService {
         Integer pageTotalCount = bookDao.queryPageTotalCountByPrice(min, max);
         
         if (pageTotalCount == 0) {  // 因为存在没有想要的价格区间的情况，即查找不出记录，则执行 page(pageNo) 返回查询所有分页数据或设置 page 的 url，让控制层判断
-
-           /* //求总记录数并设置
-            pageTotalCount = bookDao.queryPageTotalCount();
-            page.setPageTotalCount(pageTotalCount);
-
-            //求总页码数并设置
-            Integer pageTotal;
-            pageTotal = pageTotalCount % Page.PAGE_SIZE > 0 ? (pageTotalCount / Page.PAGE_SIZE + 1) : (pageTotalCount / Page.PAGE_SIZE);
-            page.setPageTotal(pageTotal);
-
-            //设置当前页码
-            // setPageNo() 方法内当前页码需要和总页码数进行比较，所以放在后面
-            page.setPageNo(pageNo);
-
-            //查询当前页数据并设置
-            //求当前页的开始索引，注意 page.getPageNo()
-            int begin = (page.getPageNo() - 1) * Page.PAGE_SIZE;
-            List<Book_Info> items = bookDao.queryPageItems(begin, Page.PAGE_SIZE);
-            page.setItems(items);
-
-            //设置跳转链接
-            page.setUrl("PageServlet?");
-
-            return page;*/
+            
+            // // 求总记录数并设置
+            // pageTotalCount = bookDao.queryPageTotalCount();
+            // page.setPageTotalCount(pageTotalCount);
+            //
+            // // 求总页码数并设置
+            // Integer pageTotal;
+            // pageTotal = pageTotalCount % Page.PAGE_SIZE > 0 ? (pageTotalCount / Page.PAGE_SIZE + 1) : (pageTotalCount / Page.PAGE_SIZE);
+            // page.setPageTotal(pageTotal);
+            //
+            // // 设置当前页码
+            // // setPageNo() 方法内当前页码需要和总页码数进行比较，所以放在后面
+            // page.setPageNo(pageNo);
+            //
+            // // 查询当前页数据并设置
+            // // 求当前页的开始索引，注意 page.getPageNo()
+            // int begin = (page.getPageNo() - 1) * Page.PAGE_SIZE;
+            // List<Book_Info> items = bookDao.queryPageItems(begin, Page.PAGE_SIZE);
+            // page.setItems(items);
+            //
+            // // 设置跳转链接
+            // page.setUrl("PageServlet?");
+            //
+            // return page;
             
             
-            
-            /*return page(pageNo);*/
+            /* return page(pageNo); */
             
             
             Page<Book_Info> page = new Page<>();
             // 设置跳转链接
             page.setUrl("PageServlet?");
-            /*也可以直接设置 page.setPageTotalCount(pageTotalCount);
-             * 让控制层判断是否 page.getPageTotalCount()==null
-             * 是则重新跳转到 PageServlety 重新查询所有分页信息
-             * */
+            /*
+             * 也可以直接设置page.setPageTotalCount(pageTotalCount);
+             * 让控制层判断是否page.getPageTotalCount() == null
+             * 是则重新跳转到PageServlet重新查询所有分页信息
+             *  */
+            
             return page;
             
             
@@ -140,7 +141,6 @@ public class BookServiceImpl implements BookService {
             
             // 设置跳转链接
             page.setUrl("PageByPriceServlet?min=" + min + "&max=" + max + "&");
-            
             
             return page;
         }

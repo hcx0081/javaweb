@@ -1,8 +1,11 @@
 package com.javaweb.pojo;
 
+import lombok.Data;
+
 /**
  * {@code @Description:} 书本表
  */
+@Data
 public class Book_Info {
     // 书本编号
     private String bookid;
@@ -14,58 +17,4 @@ public class Book_Info {
     private double bookprice;
     // 书籍库存
     private int booknum;
-    
-    public Book_Info() {
-    }
-    
-    public String getBookid() {
-        return bookid;
-    }
-    
-    public void setBookid(String bookid) {
-        this.bookid = bookid;
-    }
-    
-    public String getBookname() {
-        return bookname;
-    }
-    
-    public void setBookname(String bookname) {
-        this.bookname = bookname;
-    }
-    
-    public String getBookautor() {
-        return bookautor;
-    }
-    
-    public void setBookautor(String bookautor) {
-        this.bookautor = bookautor;
-    }
-    
-    public double getBookprice() {
-        return bookprice;
-    }
-    
-    public void setBookprice(double bookprice) {
-        this.bookprice = bookprice;
-    }
-    
-    public int getBooknum() {
-        return booknum;
-    }
-    
-    public void setBooknum(int booknum) {
-        this.booknum = booknum;
-    }
-    
-    @Override
-    public String toString() {
-        return "Book{" +
-                "bookid='" + bookid + '\'' +
-                ", bookname='" + bookname + '\'' +
-                ", bookautor='" + bookautor + '\'' +
-                ", bookprice=" + bookprice +
-                ", booknum=" + booknum +
-                '}';
-    }
 }

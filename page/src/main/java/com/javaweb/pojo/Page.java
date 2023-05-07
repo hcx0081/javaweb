@@ -9,11 +9,9 @@ import java.util.List;
 /**
  * page 是分页的模型
  *
- * @param <E> 是具体的模块的 JavaBean 类，可以是 book 、 shoes 等
+ * @param <E> 是具体的模块的 avaBean类，可以是book、shoes等
  */
-
 public class Page<E> {
-    
     public static final Integer PAGE_SIZE = 5;
     
     // 当前页码
@@ -35,10 +33,9 @@ public class Page<E> {
     }
     
     public void setPageNo(Integer pageNo) {
-        
         /*
-         * 数据边界的有效检查，防止直接在 地址栏 传参，即传页码，从而跳过 js 判断
-         * 写在这里是因为每一次设置 pageNo 的值时都会进行判断，避免越界，即复用该代码
+         * 数据边界的有效检查，防止直接在 地址栏 传参，即传页码，从而跳过JavaScript判断
+         * 写在这里是因为每一次设置pageNo的值时都会进行判断，避免越界，即复用该代码
          * */
         if (pageNo < 1) {
             pageNo = 1;

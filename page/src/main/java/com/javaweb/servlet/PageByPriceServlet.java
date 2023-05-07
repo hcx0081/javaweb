@@ -26,22 +26,22 @@ public class PageByPriceServlet extends HttpServlet {
         
         Integer min;
         Integer max;
-
-/*        //如果获取表单中的输入值为 空
-        if (request.getParameter("min")==""){
-            //赋值为0
-            min=0;
-        }else {
-            min = Integer.valueOf(request.getParameter("min"));
-        }
-
-        //如果获取表单中的输入值为 空
-        if (request.getParameter("max")==""){
-            //赋值为最大值
-            max=Integer.MAX_VALUE;
-        }else {
-            max = Integer.valueOf(request.getParameter("max"));
-        }*/
+        
+        // // 如果获取表单中的输入值为 空
+        // if (request.getParameter("min") == "") {
+        //     // 赋值为0
+        //     min = 0;
+        // } else {
+        //     min = Integer.valueOf(request.getParameter("min"));
+        // }
+        //
+        // // 如果获取表单中的输入值为 空
+        // if (request.getParameter("max") == "") {
+        //     // 赋值为最大值
+        //     max = Integer.MAX_VALUE;
+        // } else {
+        //     max = Integer.valueOf(request.getParameter("max"));
+        // }
         
         
         Page<Book_Info> page = null;
@@ -63,19 +63,12 @@ public class PageByPriceServlet extends HttpServlet {
             }
         }
         
-        
         if (page.getUrl() == "PageServlet?") {
-            /*因为是 请求转发 ，所以可以共享 request 域中的数据*/
+            // 因为是请求转发，所以可以共享Request域中的数据
             request.getRequestDispatcher("PageServlet").forward(request, response);
         } else {
             request.setAttribute("page", page);
             request.getRequestDispatcher("bookList.jsp").forward(request, response);
         }
-    }
-    
-    
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-    
     }
 }

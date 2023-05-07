@@ -8,7 +8,7 @@
 </head>
 <body>
     <%
-        // 从请求头中获取Locale头字段信息，例如:zh_CN
+        // 从请求头中获取Locale头字段信息，例如：zh_CN
         Locale locale = request.getLocale();
         System.out.println(locale);// zh_CN
         // 获取资源包（根据指定的baseName和Locale读取语言信息）
