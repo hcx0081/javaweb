@@ -1,7 +1,7 @@
 package com.javaweb.service;
 
-import com.javaweb.pojo.Book_Info;
-import com.javaweb.pojo.Page;
+import com.javaweb.entity.Book_Info;
+import com.javaweb.entity.Page;
 
 import java.sql.SQLException;
 
@@ -14,11 +14,10 @@ public interface BookService {
      *
      * @param pageNo
      * @return
-     *
      * @throws SQLException
      */
     Page<Book_Info> page(Integer pageNo) throws SQLException;
-    
+
     /**
      * 价格区间搜索按升序排列并分页
      *
@@ -26,7 +25,6 @@ public interface BookService {
      * @param min
      * @param max
      * @return
-     *
      * @throws SQLException
      */
     Page<Book_Info> pageByPrice(Integer pageNo, Integer min, Integer max) throws SQLException;

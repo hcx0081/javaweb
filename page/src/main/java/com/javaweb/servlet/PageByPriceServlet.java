@@ -3,8 +3,8 @@ package com.javaweb.servlet;
  * {@code @Description:} 根据搜索价格区间分页
  */
 
-import com.javaweb.pojo.Book_Info;
-import com.javaweb.pojo.Page;
+import com.javaweb.entity.Book_Info;
+import com.javaweb.entity.Page;
 import com.javaweb.service.BookService;
 import com.javaweb.service.Impl.BookServiceImpl;
 
@@ -21,12 +21,12 @@ public class PageByPriceServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         BookService bookService = new BookServiceImpl();
-        
+
         Integer pageNo = Integer.valueOf(request.getParameter("pageNo"));
-        
+
         Integer min;
         Integer max;
-        
+
         // // 如果获取表单中的输入值为 空
         // if (request.getParameter("min") == "") {
         //     // 赋值为0
@@ -42,10 +42,10 @@ public class PageByPriceServlet extends HttpServlet {
         // } else {
         //     max = Integer.valueOf(request.getParameter("max"));
         // }
-        
-        
+
+
         Page<Book_Info> page = null;
-        
+
         if (request.getParameter("min") == "" || request.getParameter("max") == "") {  // 如果获取表单中的输入值为 空
             try {
                 // 直接查询所有信息并分页
@@ -62,7 +62,7 @@ public class PageByPriceServlet extends HttpServlet {
                 e.printStackTrace();
             }
         }
-        
+
         if (page.getUrl() == "PageServlet?") {
             // 因为是请求转发，所以可以共享Request域中的数据
             request.getRequestDispatcher("PageServlet").forward(request, response);

@@ -3,8 +3,8 @@ package com.javaweb.servlet;
  * {@code @Description:} 实现分页功能
  */
 
-import com.javaweb.pojo.Book_Info;
-import com.javaweb.pojo.Page;
+import com.javaweb.entity.Book_Info;
+import com.javaweb.entity.Page;
 import com.javaweb.service.BookService;
 import com.javaweb.service.Impl.BookServiceImpl;
 
@@ -20,9 +20,9 @@ import java.sql.SQLException;
 public class PageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+
         BookService bookService = new BookServiceImpl();
-        
+
         Integer pageNo = Integer.valueOf(request.getParameter("pageNo"));
         Page<Book_Info> page = null;
         try {
