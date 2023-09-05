@@ -6,7 +6,7 @@ import com.javaweb.pojo.Page;
 import java.sql.SQLException;
 
 /**
- * {@code @Description:}
+ * {@code @description:}
  */
 public interface BookService {
     /**

@@ -50,5 +50,4 @@
         <url-pattern>/filter.jsp</url-pattern>
     </filter-mapping>
 
-
 </web-app>

@@ -5,7 +5,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 import javax.sql.DataSource;
 
 /**
- * {@code @Description:} c3p0 数据池连接工具
+ * {@code @description:} c3p0 数据池连接工具
  */
 public class DataSourceUtils {
     

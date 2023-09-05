@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * {@code @Description:}
+ * {@code @description:}
  */
 @ServerEndpoint(value = "/chat", configurator = GetHttpSessionConfigurator.class)
 public class ChatWebSocket {

@@ -6,7 +6,7 @@ import javax.websocket.server.HandshakeRequest;
 import javax.websocket.server.ServerEndpointConfig;
 
 /**
- * {@code @Description:}
+ * {@code @description:}
  */
 public class GetHttpSessionConfigurator extends ServerEndpointConfig.Configurator {
     @Override

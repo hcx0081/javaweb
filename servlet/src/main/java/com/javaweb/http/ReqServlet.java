@@ -1,6 +1,6 @@
 package com.javaweb.http;
 /**
- * {@code @Description:} ${Description}
+ * {@code @description:} ${Description}
  */
 
 import javax.servlet.ServletException;
@@ -20,6 +20,7 @@ public class ReqServlet extends HttpServlet {
         System.out.println(request.getContextPath());
         System.out.println(request.getParameter("name"));
         // request.getRequestDispatcher("").forward(request, response);
+        System.out.println(request.getAsyncContext().getTimeout());
     }
     
     @Override

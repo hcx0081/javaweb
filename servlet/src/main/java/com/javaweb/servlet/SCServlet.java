@@ -1,6 +1,6 @@
 package com.javaweb.servlet;
 /**
- * {@code @Description:} ${description}
+ * {@code @description:} ${description}
  */
 
 import javax.servlet.ServletContext;

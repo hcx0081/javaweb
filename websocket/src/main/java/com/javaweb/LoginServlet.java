@@ -1,6 +1,6 @@
 package com.javaweb;
 /**
- * {@code @Description:} ${Description}
+ * {@code @description:} ${Description}
  */
 
 import javax.servlet.ServletException;

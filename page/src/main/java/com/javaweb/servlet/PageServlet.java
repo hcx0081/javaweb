@@ -1,6 +1,6 @@
 package com.javaweb.servlet;
 /**
- * {@code @Description:} 实现分页功能
+ * {@code @description:} 实现分页功能
  */
 
 import com.javaweb.pojo.Book_Info;

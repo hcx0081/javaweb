@@ -1,6 +1,6 @@
 package com.javaweb.servlet;
 /**
- * {@code @Description:} 根据搜索价格区间分页
+ * {@code @description:} 根据搜索价格区间分页
  */
 
 import com.javaweb.pojo.Book_Info;

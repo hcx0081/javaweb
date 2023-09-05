@@ -7,7 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
 /**
- * {@code @Description:} 工具类
+ * {@code @description:} 工具类
  */
 public class WebUtils {
     

@@ -3,7 +3,7 @@ package com.javaweb.pojo;
 import lombok.Data;
 
 /**
- * {@code @Description:}
+ * {@code @description:}
  */
 @Data
 public class User {

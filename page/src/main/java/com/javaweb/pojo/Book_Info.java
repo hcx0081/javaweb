@@ -3,7 +3,7 @@ package com.javaweb.pojo;
 import lombok.Data;
 
 /**
- * {@code @Description:} 书本表
+ * {@code @description:} 书本表
  */
 @Data
 public class Book_Info {

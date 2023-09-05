@@ -1,6 +1,6 @@
 package com.javaweb.servlet;
 /**
- * {@code @Description:} ${description}
+ * {@code @description:} ${description}
  */
 
 import com.google.gson.Gson;

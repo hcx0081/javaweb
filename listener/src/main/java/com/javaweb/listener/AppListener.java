@@ -1,6 +1,6 @@
 package com.javaweb.listener;
 /**
- * {@code @Description:} ${Description}
+ * {@code @description:} ${Description}
  */
 
 import javax.servlet.ServletContextAttributeEvent;

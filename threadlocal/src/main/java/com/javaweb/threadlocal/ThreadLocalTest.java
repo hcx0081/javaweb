@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * {@code @Description:}
+ * {@code @description:}
  */
 public class ThreadLocalTest {
     public static Map<String, Object> data = new HashMap<>();

@@ -1,7 +1,7 @@
 package com.javaweb.pojo;
 
 /**
- * {@code @Description:}
+ * {@code @description:}
  */
 public class Person {
     

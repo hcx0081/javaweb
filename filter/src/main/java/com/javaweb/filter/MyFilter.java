@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * {@code @Description:} 拦截路径为  /admin/*
+ * {@code @description:} 拦截路径为  /admin/*
  */
 public class MyFilter implements Filter {
     /**
