@@ -1,4 +1,4 @@
-package com.javaweb.pojo;
+package com.javaweb.entity;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Page<E> {
     public static final Integer PAGE_SIZE = 5;
-    
+
     // 当前页码
     private Integer pageNo;
     // 总页数
@@ -24,14 +24,14 @@ public class Page<E> {
     private Integer pageSize = PAGE_SIZE;
     // 当前页信息数据，注意是泛型，即是不确定的数据类型
     private List<E> items;
-    
+
     // 分页跳转的链接
     private String url;
-    
+
     public Integer getPageNo() {
         return pageNo;
     }
-    
+
     public void setPageNo(Integer pageNo) {
         /*
          * 数据边界的有效检查，防止直接在 地址栏 传参，即传页码，从而跳过JavaScript判断
@@ -43,43 +43,43 @@ public class Page<E> {
         if (pageNo > pageTotal) {
             pageNo = pageTotal;
         }
-        
+
         this.pageNo = pageNo;
     }
-    
+
     public Integer getPageTotal() {
         return pageTotal;
     }
-    
+
     public void setPageTotal(Integer pageTotal) {
         this.pageTotal = pageTotal;
     }
-    
+
     public Integer getPageTotalCount() {
         return pageTotalCount;
     }
-    
+
     public void setPageTotalCount(Integer pageTotalCount) {
         this.pageTotalCount = pageTotalCount;
     }
-    
-    
+
+
     public List<E> getItems() {
         return items;
     }
-    
+
     public void setItems(List<E> items) {
         this.items = items;
     }
-    
+
     public String getUrl() {
         return url;
     }
-    
+
     public void setUrl(String url) {
         this.url = url;
     }
-    
+
     @Override
     public String toString() {
         return "Page{" +

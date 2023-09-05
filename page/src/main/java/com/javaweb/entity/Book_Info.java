@@ -1,4 +1,4 @@
-package com.javaweb.pojo;
+package com.javaweb.entity;
 
 import lombok.Data;
 
